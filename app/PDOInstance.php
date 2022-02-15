@@ -4,6 +4,14 @@ class PDOInstance {
 	
 	public static array $instances = [];
 	
+	/**
+	 * Возвращает существующий или создает новый объект PDO.
+	 * @param  string $host хост БД
+	 * @param  string $db   название БД
+	 * @param  string $user логин пользователя
+	 * @param  string $pass пароль пользователя
+	 * @return PDO          объект подключения к БД
+	 */
 	static public function get(string $host, string $db, string $user, string $pass): PDO {
 		
 		$params = [$host, $db, $user];
