@@ -44,7 +44,7 @@ class FileDataInfo {
 		try {
 			$pdo = $this->pdo;
 			
-			if ( !in_array($this->table_name, $pdo->query("SHOW TABLES")->fetchall()[0]) ) {
+			if ( !in_array([$this->table_name], $pdo->query("SHOW TABLES")->fetchall()) ) {
 				throw new Exception("Неверное имя таблицы '{$this->table_name}'", 1);
 			}
 
